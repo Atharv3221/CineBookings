@@ -1,7 +1,7 @@
-# CineAI - Movie Booking Platform
+# Nightmare Studioz - Movie Booking Platform
 
 ## Overview
-CineAI is a modern cinema booking application built with React (Vite) frontend and Express backend. Users can browse movies, select seats, and book tickets with a beautiful, responsive interface.
+Nightmare Studioz is a modern cinema booking application built with React (Vite) frontend and Express backend. Users can browse movies, select seats, and book tickets with a beautiful, responsive interface.
 
 ## Recent Changes (November 11, 2025)
 - **Migrated from Vercel to Replit**: Adapted configuration for Replit environment
