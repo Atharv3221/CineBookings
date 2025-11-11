@@ -48,7 +48,7 @@ function MovieList() {
                 <p className="movie-description">{movie.description}</p>
                 <div className="movie-meta">
                   <span className="movie-duration">⏱️ {movie.duration}</span>
-                  <span className="movie-price">${movie.price.toFixed(2)}</span>
+                  <span className="movie-price">₹{movie.price}</span>
                 </div>
                 <button 
                   className="book-button"

@@ -164,7 +164,7 @@ function BookingPage() {
               </div>
               <div className="detail-row">
                 <span>Price per ticket:</span>
-                <span>${movie?.price.toFixed(2)}</span>
+                <span>₹{movie?.price}</span>
               </div>
               <div className="detail-row">
                 <span>Selected seats:</span>
@@ -172,7 +172,7 @@ function BookingPage() {
               </div>
               <div className="detail-row total">
                 <span>Total:</span>
-                <span>${totalPrice.toFixed(2)}</span>
+                <span>₹{totalPrice}</span>
               </div>
             </div>
 

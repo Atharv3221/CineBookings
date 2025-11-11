@@ -5,7 +5,7 @@ const fs = require('fs');
 const initSqlJs = require('sql.js');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -58,12 +58,12 @@ async function initializeDatabase() {
   const moviesCount = db.exec('SELECT COUNT(*) as count FROM movies');
   if (!moviesCount.length || moviesCount[0].values[0][0] === 0) {
     const movies = [
-      ['The Dark Knight', '/images/dark-knight.jpg', 12.99, 'When the menace known as the Joker wreaks havoc on Gotham', '2h 32min'],
-      ['Inception', '/images/inception.jpg', 14.99, 'A thief who steals corporate secrets through dream-sharing technology', '2h 28min'],
-      ['Interstellar', '/images/interstellar.jpg', 13.99, 'A team of explorers travel through a wormhole in space', '2h 49min'],
-      ['The Matrix', '/images/matrix.jpg', 11.99, 'A computer hacker learns about the true nature of reality', '2h 16min'],
-      ['Avengers: Endgame', '/images/endgame.jpg', 15.99, 'The Avengers assemble once more to reverse Thanos\' actions', '3h 1min'],
-      ['Parasite', '/images/parasite.jpg', 12.99, 'Greed and class discrimination threaten a new family bond', '2h 12min']
+      ['The Dark Knight', '/images/The_Dark_Knight_poster_7a6cd56a.png', 1079, 'When the menace known as the Joker wreaks havoc on Gotham', '2h 32min'],
+      ['Inception', '/images/Inception_poster_d0098617.png', 1244, 'A thief who steals corporate secrets through dream-sharing technology', '2h 28min'],
+      ['Interstellar', '/images/Interstellar_poster_d75fd98b.png', 1161, 'A team of explorers travel through a wormhole in space', '2h 49min'],
+      ['The Matrix', '/images/The_Matrix_poster_634ab313.png', 995, 'A computer hacker learns about the true nature of reality', '2h 16min'],
+      ['Avengers: Endgame', '/images/Avengers_Endgame_poster_1113e999.png', 1327, 'The Avengers assemble once more to reverse Thanos\' actions', '3h 1min'],
+      ['Parasite', '/images/Parasite_poster_b4f60cf4.png', 1079, 'Greed and class discrimination threaten a new family bond', '2h 12min']
     ];
 
     movies.forEach(movie => {

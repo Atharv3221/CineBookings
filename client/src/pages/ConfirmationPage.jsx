@@ -87,7 +87,7 @@ function ConfirmationPage() {
 
             <div className="detail-item total">
               <span className="label">Total Amount:</span>
-              <span className="value">${booking.total_price.toFixed(2)}</span>
+              <span className="value">₹{booking.total_price}</span>
             </div>
 
             <div className="detail-item">
