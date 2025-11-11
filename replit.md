@@ -7,7 +7,9 @@ Nightmare Studioz is a modern cinema booking application built with React (Vite)
 - **Migrated from Vercel to Replit**: Adapted configuration for Replit environment
 - **AI-Generated Movie Posters**: Added custom AI-generated poster images for all 6 movies
 - **Currency Update**: Converted all prices from USD to Indian Rupees (₹)
-- **Day/Night Mode**: Fully functional theme toggle with moon/sun icon in navbar
+- **Theme Toggle**: Modern slide toggle switch for light/dark mode
+- **Brand Update**: Renamed from CineAI to Nightmare Studioz
+- **Required Fields**: Customer name and email are now mandatory for bookings with validation
 - **Port Configuration**: Updated server to run on port 5000 for Replit compatibility
 
 ## Project Architecture

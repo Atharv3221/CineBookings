@@ -55,6 +55,21 @@ function BookingPage() {
       return;
     }
 
+    if (!customerName || !customerName.trim()) {
+      alert('Please enter your name');
+      return;
+    }
+
+    if (!customerEmail || !customerEmail.trim()) {
+      alert('Please enter your email');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
     setBooking(true);
     try {
       const response = await fetch('/api/bookings', {
@@ -65,8 +80,8 @@ function BookingPage() {
         body: JSON.stringify({
           movie_id: movieId,
           seats: selectedSeats,
-          customer_name: customerName || 'Guest',
-          customer_email: customerEmail
+          customer_name: customerName.trim(),
+          customer_email: customerEmail.trim()
         })
       });
 
@@ -179,17 +194,19 @@ function BookingPage() {
             <div className="customer-info">
               <input
                 type="text"
-                placeholder="Your Name (optional)"
+                placeholder="Your Name *"
                 value={customerName}
                 onChange={(e) => setCustomerName(e.target.value)}
                 className="input-field"
+                required
               />
               <input
                 type="email"
-                placeholder="Your Email (optional)"
+                placeholder="Your Email *"
                 value={customerEmail}
                 onChange={(e) => setCustomerEmail(e.target.value)}
                 className="input-field"
+                required
               />
             </div>
 

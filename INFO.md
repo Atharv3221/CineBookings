@@ -178,8 +178,11 @@ Express App
      "customer_email": "john@example.com"
    }
    ```
+   **Note**: Both `customer_name` and `customer_email` are required fields with validation.
 4. **Backend Processing**:
    - Validates movie exists
+   - Validates customer name is provided and not empty
+   - Validates customer email is provided and in valid format
    - Checks all seats are available
    - Calculates total price (ticket_price × number_of_seats)
    - Creates booking record

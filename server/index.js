@@ -159,6 +159,19 @@ app.post('/api/bookings', (req, res) => {
       return res.status(400).json({ error: 'Invalid booking data' });
     }
 
+    if (!customer_name || !customer_name.trim()) {
+      return res.status(400).json({ error: 'Customer name is required' });
+    }
+
+    if (!customer_email || !customer_email.trim()) {
+      return res.status(400).json({ error: 'Customer email is required' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(customer_email)) {
+      return res.status(400).json({ error: 'Valid email address is required' });
+    }
+
     const movieResult = db.exec('SELECT * FROM movies WHERE id = ?', [movie_id]);
     if (!movieResult.length || !movieResult[0].values.length) {
       return res.status(404).json({ error: 'Movie not found' });
@@ -184,7 +197,7 @@ app.post('/api/bookings', (req, res) => {
 
     db.run(
       'INSERT INTO bookings (movie_id, seats, customer_name, customer_email, total_price) VALUES (?, ?, ?, ?, ?)',
-      [movie_id, seats.join(','), customer_name || 'Guest', customer_email || '', total_price]
+      [movie_id, seats.join(','), customer_name.trim(), customer_email.trim(), total_price]
     );
 
     const bookingIdResult = db.exec('SELECT last_insert_rowid()');
